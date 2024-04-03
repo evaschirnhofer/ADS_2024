@@ -11,6 +11,17 @@ Example:
     The number 17 is odd.
 """
 # Write your solution here
+# Ask the user for a number
+number = int(input("Enter a number: "))
+
+# Determine if the number is even or odd using the modulo operator
+remainder = number % 2
+
+# Check if the remainder is 0 (even) or 1 (odd)
+if remainder == 0:
+    print(f"The number {number} is even.")
+else:
+    print(f"The number {number} is odd.")
 
 
 """
@@ -27,6 +38,17 @@ Example:
     You passed the exam!
 """
 # Write your solution here
+#
+# Ask the user for their exam grade (as a percentage)
+grade = float(input("Enter your exam grade (as a percentage): "))
+
+# Check the grade and print out the appropriate message
+if grade < 50:
+    print("Unfortunately, you failed the exam.")
+elif grade >= 90:
+    print("You are excellent!")
+else:
+    print("You passed the exam!")
 
 
 """
@@ -49,3 +71,20 @@ Example:
     Your order: Salad with ranch dressing
 """
 # Write your solution here
+# Ask the user for their lunch choice
+choice = input("Would you like a sandwich, salad, or wrap? ").lower()
+
+if choice == 'sandwich':
+    sandwich_type = input("What kind of sandwich would you like? (chicken, beef, veggie) ")
+    print(f"Your order: {sandwich_type} sandwich")
+elif choice == 'salad':
+    dressing = input("What kind of dressing would you like? (vinaigrette, ranch, caesar) ")
+    print(f"Your order: Salad with {dressing} dressing")
+elif choice == 'wrap':
+    toasted = input("Would you like your wrap toasted? (yes/no) >> ")
+    if toasted == 'yes':
+        print("Your order: Toasted wrap")
+    else:
+        print("Your order: Wrap")
+else:
+    print("Invalid choice!")

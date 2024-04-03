@@ -8,6 +8,9 @@ It then prints it out with the print command:
 """
 # name = input("What is your name? ")
 # print("Hi there, " + name)
+name = input("What is your name? ")
+print("Hi there, " + name)
+
 
 """
 Variables

@@ -3,7 +3,7 @@ Conditional Statements and Comparison Operators in Python
 """
 
 # Adjust "age" to get different results
-age = 25
+age = 80
 
 """
 Comparison Operators

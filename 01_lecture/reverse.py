@@ -21,7 +21,7 @@ groceries_to_buy = [
     ["Banana", 8, 0.80],
     ["Onion", 4, 0.70],
     ["Milk", 1, 1.90],
-    ["Bread", 2, 3.50],
+    ["Bread", 3, 3.50],
     ["Fish", 2, 16.90],
     ["Cake", 1, 12.60],
     ["Steaks", 4, 9.95],

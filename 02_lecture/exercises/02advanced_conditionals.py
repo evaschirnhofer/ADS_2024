@@ -17,6 +17,20 @@ Examples:
 
 """
 # Write your solution here
+# Ask the user for the first number
+first_number = int(input("Please type in the first number: "))
+
+# Ask the user for the second number
+second_number = int(input("Please type in another number: "))
+
+# Compare the numbers
+if first_number > second_number:
+    print("The greater number was:", first_number)
+elif second_number > first_number:
+    print("The greater number was:", second_number)
+else:
+    print("The numbers are equal!")
+
 
 """
 Python comparison operators can also be used on strings. 
@@ -43,6 +57,15 @@ You gave the same word twice.
 
 """
 # Write your solution here
+first_word = str(input("Please type in a first word: "))
+second_word = str(input("Please type in a second word: "))
+
+if first_word > second_word:
+    print(first_word, "comes alphabetically last.")
+elif second_word > first_word:
+    print(second_word, "comes alphabetically last.")
+else:
+    print("You gave the same word twice.")
 
 """
 Write a program which asks for the user's name. 
@@ -60,6 +83,14 @@ Examples:
     You're not a nephew of any character I know of.
 """
 # Write your solution here
+name = str(input("Please type in your name: "))
+
+if name in ['huey', 'dewey', 'louie']:
+    print("I think you might be one of Mickey Mouse's nephews.")
+elif name in ["morty", "ferdie"]:
+    print("I think you might be one of Donald Duck's nephews.")
+else:
+    print("You're not a nephew of any character I know of.")
 
 """
 FizzBuzz
@@ -81,7 +112,20 @@ Examples:
     FizzBuzz
 """
 # Write your solution here
+number = int(input("Number: "))
 
+# Check if the number is divisible by both three and five
+if number % 3 == 0 and number % 5 == 0:
+    print("FizzBuzz")
+# Check if the number is divisible by three only
+elif number % 3 == 0:
+    print("Fizz")
+# Check if the number is divisible by five only
+elif number % 5 == 0:
+    print("Buzz")
+# If none of the above conditions are met, print the number itself
+else:
+    print(number)
 
 """
 LeapYear
@@ -101,4 +145,11 @@ Examples:
     That year is not a leap year.
 """
 # Write your solution here
+# Ask the user for a year
+year = int(input("Please type in a year: "))
 
+# Check if the year is a leap year
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print("That year is a leap year.")
+else:
+    print("That year is not a leap year.")
