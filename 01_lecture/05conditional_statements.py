@@ -3,7 +3,7 @@ Conditional Statements and Comparison Operators in Python
 """
 
 # Adjust "age" to get different results
-age = 80
+age = 10
 
 """
 Comparison Operators
@@ -12,6 +12,7 @@ Comparison Operators
 # Greater than
 is_older_than_20 = age > 20
 print(f"Is the person older than 20? {is_older_than_20}")
+print(type(is_older_than_20))
 
 # Less Than
 is_younger_than_30 = age < 30
@@ -39,6 +40,9 @@ Conditional Statements
 # Basic if statement
 if age >= 18:
     print("The person is considered an adult.")
+    print("sdjssjd")
+
+print("after if statement")
 
 # if-else statement
 if age >= 65:

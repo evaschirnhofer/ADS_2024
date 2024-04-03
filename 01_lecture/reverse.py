@@ -12,9 +12,12 @@ def apply_printing_format_to_number(number):
     return str(round(number, 2))
 
 
+# first get the name input
 name = input("What is your name?\n")
 budget = float(input("What's your current budget?\n"))
-print("Hello, " + name + "! Your budget is " + apply_printing_format_to_number(budget) + "€. Let's go shopping!")
+# print("Hello, " + name + "! Your budget is " + apply_printing_format_to_number(budget) + "€. Let's go shopping!")
+print("Hello, " + name + "! Your budget is " + str(budget) + "€. Let's go shopping!")
+
 
 groceries_to_buy = [
     ["Apple", 5, 0.45],
@@ -31,8 +34,8 @@ sum_total = 0
 items_total = 0
 
 print("The following items are on your grocery-list:")
-for item in groceries_to_buy:
-    item_name, qty, price = item
+for myItem in groceries_to_buy:
+    item_name, qty, price = myItem
     print(str(qty) + "x " + item_name + " á " + apply_printing_format_to_number(price) + "€")
 
     items_total = items_total + qty
@@ -49,10 +52,10 @@ print("---")
 
 if budget_difference < 0:
     print("Sorry, you have made " + apply_printing_format_to_number(budget_difference * (-1)) + "€ in debt!")
-elif budget_difference > 0:
-    print(
-        "Congratulation, after buying your groceries, you have " + apply_printing_format_to_number(budget_difference) +
-        "€ left!")
+# elif budget_difference > 0:
+#     print(
+#         "Congratulation, after buying your groceries, you have " + apply_printing_format_to_number(budget_difference) +
+#         "€ left!")
 else:
     print("You have bought all your groceries but no more money!")
 
