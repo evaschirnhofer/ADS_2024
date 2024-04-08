@@ -91,7 +91,7 @@ count = 0
 # Iterate to get four numbers from the user
 for i in range(4):
     # Ask the user for a number
-    num = float(input(f"Number {i + 1}: >> "))
+    num = float(input(f"Number {i + 1}: "))
 
     # Add the number to the sum
     total_sum += num

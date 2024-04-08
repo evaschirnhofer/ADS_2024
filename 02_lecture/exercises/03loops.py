@@ -14,6 +14,16 @@ Example:
     okay then
 """
 # Write your solution here
+def main():
+  while True:
+    print("Hello world!")
+    answer = input("shall we continue? ")
+    if answer == "no":
+        print("okay then")
+        break
+
+if __name__ == "__main__":
+    main()
 
 """
 Write a program which asks the user for integer numbers.
@@ -41,6 +51,20 @@ Example:
     Exiting...
 """
 # Write your solution here
+from math import sqrt
+def main():
+    while True:
+        number = int(input("Please type in a number: "))
+        if number == 0:
+            print("Exiting...")
+            break
+        elif number < 0:
+            print("invalid number")
+        else:
+            print(sqrt(number))
+
+if __name__ == "__main__":
+    main()
 
 """
 This program should print out a countdown. However, the program doesn't quite work. Please fix it.
@@ -49,11 +73,9 @@ Hint: you can use the debugger of PyCharm to see how the program is executing.
 # Fix the code
 number = 5
 print("Countdown!")
-while True:
+while number > 0:
   print(number)
   number = number - 1
-  if number > 0:
-    break
 
 print("Now!")
 
@@ -69,6 +91,25 @@ Examples:
     The next leap year after 2024 is 2028
 """
 # Write your solution here
+def is_leap_year(year):
+    # Leap years are divisible by 4
+    # But if they are divisible by 100, they must also be divisible by 400
+    return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+
+def find_next_leap_year(current_year):
+    next_year = current_year + 1
+    while not is_leap_year(next_year):
+        next_year += 1
+    return next_year
+
+def main():
+    year = int(input("Year: "))
+    next_leap_year = find_next_leap_year(year)
+    print(f"The next leap year after {year} is {next_leap_year}")
+
+if __name__ == "__main__":
+    main()
+
 
 """
 Please write a program which keeps asking the user for words. 
@@ -87,11 +128,42 @@ Example:
   Once upon a time there was a girl
 """
 # Write your solution here
+def main():
+    story = []
+    while True:
+        word = input("Please type in a word: ")
+        if word == "end":
+            break
+        else:
+            story.append(word)
+
+    print(" ".join(story))
+
+if __name__ == "__main__":
+    main()
 
 """
 Change the program above so that the loop ends also if the user types in the same word twice in a row.
 """
 # Write your solution here
+def main():
+    story = []
+    prev_word = None
+    while True:
+        word = input("Please type in a word: ")
+        if word == "end":
+            break
+        elif word == prev_word:
+            print("You've typed the same word twice in a row. Ending the story.")
+            break
+        else:
+            story.append(word)
+            prev_word = word
+
+    print(" ".join(story))
+
+if __name__ == "__main__":
+    main()
 
 """
 Please write a program which asks the user for integer numbers. 
@@ -111,6 +183,38 @@ Example output
   Negative numbers 1
 """
 # Write your solution here
+def main():
+    numbers = []
+    positive_count = 0
+    negative_count = 0
+
+    while True:
+        num = int(input("Please type in an integer number (0 to stop): "))
+        if num == 0:
+            break
+        else:
+            numbers.append(num)
+            if num > 0:
+                positive_count += 1
+            elif num < 0:
+                negative_count += 1
+
+    num_count = len(numbers)
+    num_sum = sum(numbers)
+    if num_count > 0:
+        mean = num_sum / num_count
+    else:
+        mean = 0
+
+    print(f"Numbers typed in: {num_count}")
+    print(f"The sum of the numbers is: {num_sum}")
+    print(f"The mean of the numbers is: {mean}")
+    print(f"Positive numbers: {positive_count}")
+    print(f"Negative numbers: {negative_count}")
+
+if __name__ == "__main__":
+    main()
+
 
 """
 Largest Number
@@ -134,6 +238,27 @@ Examples:
   No number entered.
 """
 # Write your solution here
+def largest_number():
+    num = float(input("Number 1: "))
+    if num <= 0:
+        print("No number entered.")
+        return
+
+    largest = num
+    count = 1
+
+    while True:
+        count += 1
+        num = float(input(f"Number {count}: "))
+        if num <= 0:
+            break
+        if num > largest:
+            largest = num
+
+    print(f"The largest number is {largest}")
+
+largest_number()
+
 
 """
 Write a program that reads in an integer number (number of lines) and generates the subsequent output using 
@@ -151,6 +276,25 @@ Examples:
   Invalid number!
 """
 # Write your solution here
+def generate_output(n):
+    if n <= 0:
+        print("Invalid number!")
+        return
+
+    count = 1
+    for i in range(1, n + 1):
+        for j in range(i):
+            print(count, end=" ")
+            count += 1
+        print()
+
+
+try:
+    n = int(input("n: "))
+    generate_output(n)
+except ValueError:
+    print("Invalid input! Please enter a valid integer number.")
+
 
 """
 Write a program that uses loops to create a pyramid of stars '*' on the console. 
@@ -164,6 +308,14 @@ Example:
   ***********
 """
 # Write your solution here
+def create_pyramid(rows):
+    for i in range(1, rows + 1):
+        print(" " * (rows - i) + "*" * (2 * i - 1))
+
+
+rows = 6
+create_pyramid(rows)
+
 
 """
 Write a program to calculate the average grade. The console reads in grades between 1 and 5 
@@ -183,3 +335,29 @@ Example:
   Negative marks: 2
 """
 # Write your solution here
+def calculate_average():
+    total = 0
+    count = 0
+    negative_count = 0
+
+    while True:
+        mark = int(input(f"Mark {count + 1}: >> "))
+        if mark == 0:
+            break
+        elif 1 <= mark <= 5:
+            total += mark
+            count += 1
+            if mark == 5:
+                negative_count += 1
+        else:
+            print("Invalid mark!")
+
+    if count > 0:
+        average = total / count
+        print(f"Average: {average:.2f}")
+        print(f"Negative marks: {negative_count}")
+    else:
+        print("No valid marks entered.")
+
+
+calculate_average()

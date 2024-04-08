@@ -72,7 +72,7 @@ Example:
 """
 # Write your solution here
 # Ask the user for their lunch choice
-choice = input("Would you like a sandwich, salad, or wrap? ").lower()
+choice = input("Would you like a sandwich, salad, or wrap? "
 
 if choice == 'sandwich':
     sandwich_type = input("What kind of sandwich would you like? (chicken, beef, veggie) ")
