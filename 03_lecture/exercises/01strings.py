@@ -9,6 +9,11 @@ Example:
     heyheyheyhey
 """
 # Write your solution here
+string = str(input("Please type in a string: "))
+amount = int(input("Please type in an amount: "))
+
+print(string * amount, end="")
+
 
 """
 Write a program which asks the user for two strings and then prints out whichever is the longer of the two - 
@@ -27,6 +32,16 @@ Examples:
 """
 
 # Write your solution here
+string1 = str(input("Please type in string 1: "))
+string2 = str(input("Please type in string 2: "))
+
+if len(string1) < len(string2):
+    print(f"{string2} is longer")
+elif len(string2) < len(string1):
+    print(f"{string1} is longer")
+else:
+    print("The strings are equally long")
+
 
 """
 Write a program which asks the user for a string. The program then prints out the input string in reversed order, 
@@ -36,6 +51,20 @@ Try to solve this example in 2 ways:
     * once using negative indeces
 """
 # Write your solution here
+# Ask the user for a string
+user_string = input("Please type in a string: ")
+
+# Print the string in reversed order using positive indices
+for i in range(len(user_string) - 1, -1, -1):
+    print(user_string[i])
+
+# Ask the user for a string
+user_string = input("Please type in a string: ")
+
+# Print the string in reversed order using negative indices
+for i in range(-1, -len(user_string) - 1, -1):
+    print(user_string[i])
+
 
 """
 Write a program which asks the user for a string. 
@@ -50,6 +79,14 @@ Examples:
     The second and the second to last characters are a
 """
 # Write your solution here
+give_string = str(input("Please type in a string: "))
+index = 0
+
+if give_string[1] == give_string[-2]:
+    print("The second and the second to last characters are the same")
+else:
+    print("The second and the second to last characters are different")
+
 
 """
 Write a program which prints out a line of hash characters, the width of which is chosen by the user.
@@ -62,6 +99,8 @@ Examples:
     ##
 """
 # Write your solution here
+width = int(input("Width: "))
+print("#" * width)
 
 """
 Modify the previous program so that it also asks for the height, and prints out a rectangle of hash characters accordingly.
@@ -74,6 +113,11 @@ Example:
     ##########
 """
 # Write your solution here
+width1 = int(input("Width: "))
+height = int(input("Height: "))
+
+for _ in range(height):
+    print("#" * width)
 
 """
 Write a program which asks the user for a string and then prints it out so that exactly 20 characters are displayed. 
@@ -89,6 +133,15 @@ Examples:
     **********helloworld 
 """
 # Write your solution here
+# Ask the user for a string
+user_string = input("Please type in a string: ")
+
+# Calculate the number of * characters needed to fill the line
+asterisks_count = max(20 - len(user_string), 0)
+
+# Print the string with leading * characters to make the total length 20
+print('*' * asterisks_count + user_string)
+
 
 """
 Please write a program which asks the user for a string and then prints out a frame of * characters with the word in the centre. 
@@ -110,6 +163,20 @@ Examples:
     ******************************
 """
 # Write your solution here
+# Ask the user for a word
+word = input("Word: ")
+
+# Calculate the remaining space for padding
+padding = 30 - len(word)
+
+# Calculate the padding on each side of the word
+left_padding = padding // 2
+right_padding = padding - left_padding
+
+# Print the frame with the word centered
+print('*' * 30)
+print('*' + ' ' * left_padding + word + ' ' * right_padding + '*')
+print('*' * 30)
 
 
 """
@@ -125,6 +192,10 @@ Example:
     test
 """
 # Write your solution here
+string3 = str(input("Please type in a string: "))
+
+for i in range(1, len(string3) + 1):
+    print(string3[:i])
 
 """
 Write a program which asks the user to type in a string. 
@@ -139,6 +210,9 @@ Example:
     test
 """
 # Write your solution here
+string4 = str(input("Please type in a string: "))
+for i in range(len(string4)):
+    print(string4[i:])
 
 """
 Write a program which asks the user to input a string. The program then prints out different messages if the string 
@@ -157,7 +231,22 @@ You may assume the input will be in lowercase entirely. Have a look at the examp
     o not found
 """
 # Write your solution here
+string5 = str(input("Please type in a string: "))
 
+if "a" in string5:
+    print("a found")
+else:
+    print("a not found")
+
+if "e" in string5:
+    print("e found")
+else:
+    print("e not found")
+
+if "o" in string5:
+    print("o found")
+else:
+    print("o not found")
 
 """
 Write a program which asks the user to type in a string and a single character. The program then 
@@ -183,6 +272,13 @@ Examples:
     Please type in a character: >> n
 """
 # Write your solution here
+word1 = str(input("Please type in a word: "))
+character = str(input("Please type in a character: "))
+
+index = word.find(character)
+
+if index != -1 and index <= len(word) - 3:
+    print(word[index:index+3])
 
 """
 Write a program which finds the second occurrence of a substring. If there is no second (or first) occurrence, 
@@ -206,3 +302,20 @@ Examples:
     The substring does not occur twice in the string.
 """
 # Write your solution here
+string6 = str(input("Please type in a string: "))
+substring = str(input("Please type in a substring: "))
+
+# Find the index of the first occurrence of the substring
+first_index = string6.find(substring)
+
+if first_index == -1:
+    print("The substring does not occur in the string.")
+else:
+    # Find the index of the second occurrence of the substring
+    second_index = string6.find(substring, first_index + len(substring))
+
+    if second_index == -1:
+        print("The substring does not occur twice in the string.")
+    else:
+        print(f"The second occurrence of the substring is at index {second_index}.")
+
