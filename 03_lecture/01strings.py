@@ -43,19 +43,19 @@ For example, len("hey") returns 3, because there are three characters in the str
 The following program asks the user for a string and then prints it "underlined". 
 The program prints a second line with as many - characters as is the length of the input:
 """
-# input_string = input("Please type in a string: ")
-# print(input_string)
-# print("-"*len(input_string))
+input_string = input("Please type in a string: ")
+print(input_string)
+print("-"*len(input_string))
 
 
 """
 Since len returns an integer, it is also possible to compare their results:
 """
-# input_string = input("Please type in a string 1: ")
-# input_string2 = input("Please type in a string 2: ")
+input_string = input("Please type in a string 1: ")
+input_string2 = input("Please type in a string 2: ")
 #
-# if len(input_string) < len(input_string2):
-#     print(f"{input_string2} has more characters than {input_string}")
+if len(input_string) < len(input_string2):
+    print(f"{input_string2} has more characters than {input_string}")
 
 """
 As strings are essentially sequences of characters, any single character in a string can also be retrieved. 
@@ -63,36 +63,36 @@ The operator [] finds the character with the index specified within the brackets
 The index refers to a position in the string, counting up from zero. 
 The first character in the string has index 0, the second character has index 1, and so forth.
 """
-# input_string = input("Please type in a string: ")
-# print(input_string[0])
-# print(input_string[1])
-# print(input_string[3])
+input_string = input("Please type in a string: ")
+print(input_string[0])
+print(input_string[1])
+print(input_string[3])
 
 """
 Since the first character in a string has the index 0, the last character has the index length - 1. 
 The following program prints out the first and the last characters of a string:
 """
-# input_string = input("Please type in a string: ")
-# print("First character: " + input_string[0])
-# print("Last character: " + input_string[len(input_string) - 1])
+input_string = input("Please type in a string: ")
+print("First character: " + input_string[0])
+print("Last character: " + input_string[len(input_string) - 1])
 
 """
 The following program loops through all the characters in a string from first to last:
 """
-# input_string = input("Please type in a string: ")
-# index = 0
-# while index < len(input_string):
-#     print(input_string[index])
-#     index += 1
+input_string = input("Please type in a string: ")
+index = 0
+while index < len(input_string):
+    print(input_string[index])
+    index += 1
 
 """
 You can also use negative indexing to access characters counting from the end of the string. 
 The last character in a string is at index -1, the second to last character is at index -2, and so forth. 
 You can think of input_string[-1] as shorthand for input_string[len(input_string) - 1].
 """
-# input_string = input("Please type in a string: ")
-# print("First character: " + input_string[0])
-# print("Last character: " + input_string[-1])
+input_string = input("Please type in a string: ")
+print("First character: " + input_string[0])
+print("Last character: " + input_string[-1])
 
 """
 IndexError: string index out of range
@@ -119,16 +119,16 @@ index ``b`` - that is, including the first, but excluding the last.
 
 Let's have a closer look at some sliced strings:
 """
-# input_string = "presumptious"
+input_string = "presumptious"
 #
-# print(input_string[0:3])
-# print(input_string[4:10])
+print(input_string[0:3])
+print(input_string[4:10])
 #
 # # if the beginning index is left out, it defaults to 0
-# print(input_string[:3])
+print(input_string[:3])
 #
 # # if the end index is left out, it defaults to the length of the string
-# print(input_string[4:])
+print(input_string[4:])
 
 """
 In Python string processing the interval [a:b] is half open, which in this case means 
@@ -147,25 +147,25 @@ The Boolean expression a in b is true, if b contains the substring a.
 
 For example, this bit of code
 """
-# input_string = "test"
+input_string = "test"
 #
-# print("t" in input_string)      # True
-# print("x" in input_string)      # False
-# print("es" in input_string)     # True
-# print("ets" in input_string)    # False
+print("t" in input_string)      # True
+print("x" in input_string)      # False
+print("es" in input_string)     # True
+print("ets" in input_string)    # False
 
 """
 The program below lets the user search for substrings within a string hardcoded into the program:
 """
-# input_string = "perpendicular"
+input_string = "perpendicular"
 #
 # while True:
-#     substring = input("What are you looking for? ")
-#     if substring in input_string:
-#         print("Found it")
-#     else:
-#         print("Not found")
-#
+# substring = input("What are you looking for? ")
+#   if substring in input_string:
+#       print("Found it")
+#    else:
+#      print("Not found")
+#   break
 
 """
 FIND Method
@@ -251,23 +251,21 @@ Strings are so called iterable objects (since the contain a sequence of characte
 That means, we can iterate through them, using a for-loop
 """
 
-# name = "LEON"
-# for character in name:
-#     print(character)
+name = "LEON"
+for character in name:
+    print(character)
 #
 #
-# my_string = "hello"
+my_string = "hello"
 #
 # # Using a while loop to iterate over each character in the string
-# index = 0
-# while index < len(my_string):
-#     print(my_string[index])
-#     index += 1
+index = 0
+while index < len(my_string):
+    print(my_string[index])
+    index += 1
 #
-# my_string = "hello"
+my_string = "hello"
 #
 # # Using index to access each character in the string
-# for i in range(len(my_string)):
-#     print(my_string[i])
-
-
+for i in range(len(my_string)):
+    print(my_string[i])

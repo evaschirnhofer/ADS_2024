@@ -41,6 +41,12 @@ def greet(first_name, last_name):
 # Function execution with two arguments
 greet("Alice", "Johnson")  # prints: Hello, Alice Johnson!
 
+def sales(grocery_store, item_on_sale, cost):
+  print(grocery_store + " is selling " + item_on_sale + " for " + cost)
+
+sales("The Farmer’s Market", "toothpaste", "$1")
+
+
 """
 RETURN VALUES
 Functions can return values using the 'return' keyword.
@@ -54,6 +60,16 @@ def add(a, b):
 # Capturing return value
 result = add(3, 4)
 print(result)  # prints: 7
+
+# Define a function my_function() with parameter x
+
+def my_function(x):
+  return x + 1
+
+# Invoke the function
+
+print(my_function(2))      # Output: 3
+print(my_function(3 + 5))  # Output: 9
 
 """
 TYPE HINTS
@@ -86,7 +102,6 @@ describe_pet(animal_type="hamster", pet_name="Harry")  # prints: I have a hamste
 DEFAULT VALUES
 Functions can have parameters with default values.
 """
-
 
 def describe_pet(pet_name, animal_type="dog"):
     print("I have a " + animal_type + " named " + pet_name + ".")
