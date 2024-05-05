@@ -10,10 +10,6 @@ Execute the function after its definition and run the program!
 """
 
 # Write your solution here
-def bark():
-    print("Woof")
-
-bark()
 
 """
 ### Function with 1 Argument, additional logic ###
@@ -33,22 +29,7 @@ Examples:
     ...
 """
 
-def make_sound(animal):
-    print(animal)
-
-
-while True:
-    animal = str(input("Please enter an animal: "))
-    if animal.lower() == "cat":
-        make_sound("Meow")
-    elif animal.lower() == "dog":
-        make_sound("Woof")
-    elif animal.lower() == "bird":
-        make_sound("chirp")
-    else:
-        make_sound("???")
-        break
-
+# Write your solution here
 
 """
 ### Function with 2 Arguments ###
@@ -70,46 +51,6 @@ Ask the user repeatedly using a loop.
 """
 
 # Write your solution here
-# variante 1
-def print_many_times(text, times):
-    """
-    Prints the given text for the specified number of times.
-
-    Args:
-        text (str): The text to be printed.
-        times (int): Number of times to print the text.
-    """
-    for _ in range(times):
-        print(text)
-
-# Example usage
-print_many_times("Gimme Five!", 5)
-
-# Variante 2
-def print_many_times(text, times):
-    """
-    Prints the given text for the specified number of times.
-
-    Args:
-        text (str): The text to be printed.
-        times (int): Number of times to print the text.
-    """
-    for _ in range(times):
-        print(text)
-
-# Loop to ask for user input repeatedly
-while True:
-    # Ask for text and number of times to print
-    text = input("Enter the text to print (or 'q' to quit): ")
-    if text.lower() == 'q':  # Check if the user wants to quit
-        break
-    try:
-        times = int(input("Enter the number of times to print: "))
-        if times < 0:  # Check if the number of times is negative
-            raise ValueError("Number of times must be a positive integer.")
-        print_many_times(text, times)  # Call the function to print the text
-    except ValueError as e:
-        print("Invalid input:", e)
 
 """
 ### Return Values ###
@@ -125,32 +66,8 @@ Example:
 Additional Task:
 Add a type hint to the return value of the function!
 """
-def greatest_number(a: int, b: int, c: int) -> int:
-    """
-    Returns the greatest of three numbers.
 
-    Args:
-        a (int): First number.
-        b (int): Second number.
-        c (int): Third number.
-
-    Returns:
-        int: The greatest number among the three.
-    """
-    return max(a, b, c)
-
-def print_greatest(number: int):
-    """
-    Prints the greatest number.
-
-    Args:
-        number (int): The greatest number to print.
-    """
-    print(f"The greatest number is {number}!")
-
-# Example usage
-return_value = greatest_number(3, 4, 1)
-print_greatest(return_value)
+# Write your solution here
 
 """
 ### Type Hints ###
@@ -174,19 +91,6 @@ Example Outputs:
 """
 
 # Write your solution here
-def super_print(text: str, upper_case: bool):
-    if upper_case:
-        print(text.upper())
-    else:
-        print(text)
-
-# First call with string as first argument
-super_print("hello world", False)
-
-# Second call with boolean as first argument
-super_print(upper_case=True, text="hello world")
-
-
 
 """
 ### Default Values ###
@@ -205,21 +109,3 @@ Example:
 """
 
 # Write your solution here
-def greet(name="Unknown"):
-    """
-    Prints a greeting for the entered name.
-
-    Args:
-        name (str): The name to greet. Default is "Unknown" if no name is provided.
-    """
-    print(f"Hello {name}!")
-
-# Ask for user input
-user_name = input("Please enter your name: >> ")
-
-# Execute the greet function
-if user_name.strip():  # Check if the input is not empty or only whitespace
-    greet(user_name)
-else:
-    greet()  # No input provided, use the default value "Unknown"
-
