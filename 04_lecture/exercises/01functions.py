@@ -67,9 +67,6 @@ Additional Task:
 Add a type hint to the return value of the function!
 """
 
-def print_greatest(number):
-    print(f"The greatest number is {number}!")
-
 # Write your solution here
 
 """
