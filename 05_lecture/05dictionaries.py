@@ -109,8 +109,8 @@ One way to accomplish this would be to use dictionaries:
 
 def categorize_by_initial(my_list):
     groups = {}
-    for word in my_list:
-        initial = word[0]
+    for word in my_list:    # get the first word in list
+        initial = word[0]   # gets the first letter of the word
         # initialize a new list when the letter is first encountered
         if initial not in groups:
             groups[initial] = []

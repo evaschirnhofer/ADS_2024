@@ -50,6 +50,13 @@ Try to solve this example in 2 ways:
     * once using positive indeces
     * once using negative indeces
 """
+str = input("String here: ")
+for i in range(-1, -len(str) - 1, -1):
+    print(str[i])
+
+for i in range(len(str) - 1, -1, -1):
+    print(str[i])
+
 # Write your solution here
 # Ask the user for a string
 user_string = input("Please type in a string: ")

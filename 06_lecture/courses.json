@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Programming 1",
+        "abbreviation": "PRG1",
+        "periods": [1, 3]
+    },
+    {
+        "name": "Algorithms and data structures",
+        "abbreviation": "ADS",
+        "periods": [2, 4]
+    },
+    {
+        "name": "Database Applications",
+        "abbreviation": "DBA",
+        "periods": [1, 2, 3, 4]
+    }
+]
